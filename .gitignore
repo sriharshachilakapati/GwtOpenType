@@ -1,0 +1,23 @@
+# Gradle temporary directory
+.gradle/
+
+# The build directory
+build/
+gwt-opentype/build/
+examples/build/
+
+# The war directory
+examples/war/
+
+# IDEA project files
+*.iml
+*.ipr
+*.iws
+gwt-opentype/*.iml
+gwt-opentype/*.ipr
+gwt-opentype/*.iws
+examples/*.iml
+examples/*.ipr
+examples/*.iws
+
+out/
