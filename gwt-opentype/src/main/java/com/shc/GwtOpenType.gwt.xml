@@ -7,4 +7,11 @@
     <inherits name="com.google.gwt.xml.XML"/>
 
     <source path='gwtopentype'/>
+
+    <!-- Deferred binding to detect SuperDevMode  -->
+    <replace-with class="com.shc.gwtopentype.SuperDevModeTrue">
+        <when-type-is class="com.shc.gwtopentype.SuperDevMode"/>
+        <when-property-is name="superdevmode" value="on"/>
+    </replace-with>
+
 </module>
