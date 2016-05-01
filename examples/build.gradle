@@ -17,6 +17,10 @@ javadoc {
     options.addStringOption("sourcepath", "")
 }
 
+war {
+    from sourceSets.main.resources
+}
+
 dependencies {
     providedCompile 'com.google.gwt:gwt-user:2.8.0-beta1'
     providedCompile 'com.google.gwt:gwt-servlet:2.8.0-beta1'
