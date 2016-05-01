@@ -148,7 +148,7 @@ public class Font extends JavaScriptObject
      * @param y    Vertical position of the {@code baseline} of the text.
      */
     public final native void draw(Context2d ctx, String text, double x, double y) /*-{
-        this.draw(ctx, x, y, 72);
+        this.draw(ctx, text, x, y, 72);
     }-*/;
 
     /**
@@ -161,7 +161,7 @@ public class Font extends JavaScriptObject
      * @param fontSize Font size in pixels. We scale the glyph units by {@code 1 / unitsPerEm * fontSize}.
      */
     public final native void draw(Context2d ctx, String text, double x, double y, int fontSize) /*-{
-        this.draw(ctx, x, y, fontSize);
+        this.draw(ctx, text, x, y, fontSize);
     }-*/;
 
     /**
@@ -176,7 +176,7 @@ public class Font extends JavaScriptObject
      *                 account.
      */
     public final native void draw(Context2d ctx, String text, double x, double y, int fontSize, Options options) /*-{
-        this.draw(ctx, x, y, fontSize, options);
+        this.draw(ctx, text, x, y, fontSize, options);
     }-*/;
 
     /**
@@ -187,7 +187,7 @@ public class Font extends JavaScriptObject
      * @param text The text to create.
      */
     public final native void drawPoints(Context2d ctx, String text) /*-{
-        this.drawPoints(ctx, 0, 0, 72);
+        this.drawPoints(ctx, text, 0, 0, 72);
     }-*/;
 
     /**
@@ -200,7 +200,7 @@ public class Font extends JavaScriptObject
      * @param y    Vertical position of the {@code baseline} of the text.
      */
     public final native void drawPoints(Context2d ctx, String text, double x, double y) /*-{
-        this.drawPoints(ctx, x, y, 72);
+        this.drawPoints(ctx, text, x, y, 72);
     }-*/;
 
     /**
@@ -214,7 +214,7 @@ public class Font extends JavaScriptObject
      * @param fontSize Font size in pixels. We scale the glyph units by {@code 1 / unitsPerEm * fontSize}.
      */
     public final native void drawPoints(Context2d ctx, String text, double x, double y, int fontSize) /*-{
-        this.drawPoints(ctx, x, y, fontSize);
+        this.drawPoints(ctx, text, x, y, fontSize);
     }-*/;
 
     /**
@@ -230,7 +230,7 @@ public class Font extends JavaScriptObject
      *                 account.
      */
     public final native void drawPoints(Context2d ctx, String text, double x, double y, int fontSize, Options options) /*-{
-        this.drawPoints(ctx, x, y, fontSize, options);
+        this.drawPoints(ctx, text, x, y, fontSize, options);
     }-*/;
 
     /**
@@ -242,7 +242,7 @@ public class Font extends JavaScriptObject
      * @param text The text to create.
      */
     public final native void drawMetrics(Context2d ctx, String text) /*-{
-        this.drawMetrics(ctx, 0, 0, 72);
+        this.drawMetrics(ctx, text, 0, 0, 72);
     }-*/;
 
     /**
@@ -256,7 +256,7 @@ public class Font extends JavaScriptObject
      * @param y    Vertical position of the {@code baseline} of the text.
      */
     public final native void drawMetrics(Context2d ctx, String text, double x, double y) /*-{
-        this.drawMetrics(ctx, x, y, 72);
+        this.drawMetrics(ctx, text, x, y, 72);
     }-*/;
 
     /**
@@ -271,7 +271,7 @@ public class Font extends JavaScriptObject
      * @param fontSize Font size in pixels. We scale the glyph units by {@code 1 / unitsPerEm * fontSize}.
      */
     public final native void drawMetrics(Context2d ctx, String text, double x, double y, int fontSize) /*-{
-        this.drawMetrics(ctx, x, y, fontSize);
+        this.drawMetrics(ctx, text, x, y, fontSize);
     }-*/;
 
     /**
@@ -288,7 +288,7 @@ public class Font extends JavaScriptObject
      *                 account.
      */
     public final native void drawMetrics(Context2d ctx, String text, double x, double y, int fontSize, Options options) /*-{
-        this.drawMetrics(ctx, x, y, fontSize, options);
+        this.drawMetrics(ctx, text, x, y, fontSize, options);
     }-*/;
 
     /**
@@ -314,7 +314,7 @@ public class Font extends JavaScriptObject
      * character and glyph. Otherwise, {@code null} is returned.
      */
     public final native Glyph charToGlyph(char ch) /*-{
-        return this.charToGlyph(ch);
+        return this.charToGlyph(String.fromCharCode(ch));
     }-*/;
 
     /**
@@ -339,7 +339,7 @@ public class Font extends JavaScriptObject
      * @return True if the font has a glyph for the given character.
      */
     public final native boolean hasChar(char ch) /*-{
-        return this.hasChar(ch);
+        return this.hasChar(String.fromCharCode(ch));
     }-*/;
 
     /**
@@ -351,7 +351,7 @@ public class Font extends JavaScriptObject
      * @return The index of the Glyph in the list, or -1 if the Glyph cannot be found.
      */
     public final native int charToGlyphIndex(char ch) /*-{
-        var result = this.charToGlyphIndex(ch);
+        var result = this.charToGlyphIndex(String.fromCharCode(ch));
         return result === null || result === undefined ? -1 : result;
     }-*/;
 
